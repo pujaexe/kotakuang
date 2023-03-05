@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "public-files",
@@ -53,7 +53,8 @@
           "name": "DataProvider",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
@@ -72,7 +73,8 @@
           "name": "Reveal",
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "3tzABpV4VA1CYr52QLfLwC",
@@ -131,6 +133,11 @@
           "id": "0y2DLSxqDZ",
           "name": "logo.svg",
           "filePath": "../public/plasmic/zeus/images/logosvg.svg"
+        },
+        {
+          "id": "ZNn17rQ3W",
+          "name": "mr88.png",
+          "filePath": "../public/plasmic/zeus/images/mr88Png.png"
         }
       ],
       "indirect": false,
@@ -163,6 +170,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.217",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.217/dist/plasmic.schema.json"
+  "cliVersion": "0.1.218",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.218/dist/plasmic.schema.json"
 }

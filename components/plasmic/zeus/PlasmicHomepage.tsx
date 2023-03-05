@@ -35,6 +35,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import { PlasmicHead } from "@plasmicapp/react-web"; // plasmic-import: xaA4zDSt8T/codeComponent
 import { Embed } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: PKldDYkH42/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -53,8 +54,8 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
+  head?: p.Flex<typeof PlasmicHead>;
   section?: p.Flex<"section">;
-  embedHtml?: p.Flex<typeof Embed>;
   h1?: p.Flex<"h1">;
   link?: p.Flex<"a"> & Partial<LinkProps>;
   h3?: p.Flex<"h3">;
@@ -125,6 +126,24 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
+          <PlasmicHead
+            data-plasmic-name={"head"}
+            data-plasmic-override={overrides.head}
+            className={classNames("__wab_instance", sty.head)}
+            description={
+              "Selamat datang di Mr88! Silahkan masuk atau daftar jika anda belum memiliki akun. Jadi pemenang berikutnya dan rasakan keseruan bermain di Mr88!" as const
+            }
+            image={"/plasmic/zeus/images/mr88Png.png"}
+            title={"Mr88" as const}
+          />
+
+          <Embed
+            className={classNames("__wab_instance", sty.embedHtml__iY4LJ)}
+            code={
+              "<!-- Google tag (gtag.js) -->\n  <script async src=\"https://www.googletagmanager.com/gtag/js?id=TAG_ID\"></script>\n  <script>\n    window.dataLayer = window.dataLayer || [];\n    function gtag(){dataLayer.push(arguments);}\n    gtag('js', new Date());\n\n    gtag('config', 'AW-11106485876');\n  </script>" as const
+            }
+          />
+
           <p.Stack
             as={"section"}
             data-plasmic-name={"section"}
@@ -133,9 +152,7 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames(projectcss.all, sty.section)}
           >
             <Embed
-              data-plasmic-name={"embedHtml"}
-              data-plasmic-override={overrides.embedHtml}
-              className={classNames("__wab_instance", sty.embedHtml)}
+              className={classNames("__wab_instance", sty.embedHtml__xkr54)}
               code={
                 "<style>\n\t.blink{\n\t\twidth:100%;\n\t\theight: auto;\n\t\tpadding: 12px;\t\n\t\ttext-align: center;\n\t\tline-height: 50px;\n\t}\n\th1{\n\t\tfont-size: 72px;\n\t\tfont-family: poppins;\n\t\tcolor: white;\n\t\tanimation: blink 1s linear infinite;\n\t}\n@keyframes blink{\n0%{opacity: 0;}\n50%{opacity: .5;}\n100%{opacity: 1;}\n}\n</style>" as const
               }
@@ -437,9 +454,9 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "embedHtml", "h1", "link", "h3", "columns"],
-  section: ["section", "embedHtml", "h1", "link", "h3", "columns"],
-  embedHtml: ["embedHtml"],
+  root: ["root", "head", "section", "h1", "link", "h3", "columns"],
+  head: ["head"],
+  section: ["section", "h1", "link", "h3", "columns"],
   h1: ["h1"],
   link: ["link", "h3"],
   h3: ["h3"],
@@ -450,8 +467,8 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  head: typeof PlasmicHead;
   section: "section";
-  embedHtml: typeof Embed;
   h1: "h1";
   link: "a";
   h3: "h3";
@@ -519,8 +536,8 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    head: makeNodeComponent("head"),
     section: makeNodeComponent("section"),
-    embedHtml: makeNodeComponent("embedHtml"),
     h1: makeNodeComponent("h1"),
     link: makeNodeComponent("link"),
     h3: makeNodeComponent("h3"),
