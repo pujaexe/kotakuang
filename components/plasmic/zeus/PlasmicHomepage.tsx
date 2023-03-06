@@ -140,7 +140,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <Embed
             className={classNames("__wab_instance", sty.embedHtml__iY4LJ)}
             code={
-              "<!-- Google tag (gtag.js) -->\n  <script async src=\"https://www.googletagmanager.com/gtag/js?id=TAG_ID\"></script>\n  <script>\n    window.dataLayer = window.dataLayer || [];\n    function gtag(){dataLayer.push(arguments);}\n    gtag('js', new Date());\n\n    gtag('config', 'AW-11106485876');\n  </script>" as const
+              "<!-- Google tag (gtag.js) --> <script async src=\"https://www.googletagmanager.com/gtag/js?id=AW-11106485876\"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-11106485876'); </script>\n<!-- Event snippet for Sign-up conversion page --> <script> gtag('event', 'conversion', {'send_to': 'AW-11106485876/A-GyCPLn8I4YEPSM_q8p'}); </script>" as const
             }
           />
 
